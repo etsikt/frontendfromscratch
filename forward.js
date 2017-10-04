@@ -33,5 +33,5 @@ jQuery.extend({
 });
 
 jQuery( document ).ready(function( $ ) {
-    $.getScript("https://beta.kurs.iktsenteret.no/custom/sandbox/myfrontpage.js");
+    $.getScript("https://rawgit.com/etsikt/frontendfromscratch/master/myfrontpage.js");
 });

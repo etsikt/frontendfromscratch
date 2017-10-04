@@ -5,12 +5,12 @@ if (myFrontPage)
     var href= "/api/v1/courses/" + courseId + "/modules?per_page=100";
 
     getModules(courseId, function(modules) {
-        var html = "Moduloversikt";
-        html = html + '<div class="container-fluid">';
+        var html = '<div class="container-fluid">';
         var noOfModules = modules.length;
         for (var i = 0; i < noOfModules; i++) {
             var m = modules[i];
             html = html + '<div class="well well-lg">';
+            html = html + '<h2>' + m.name + '</h2>';
             for (var j = 0; j < m.items.length; j++) {
                 var item = m.items[j];
                 var completed = false;
@@ -44,7 +44,7 @@ function getModules(courseId, callback)
         var asyncsDone = 0;
         for (var i = 0; i < noOfModules; i++) {
             var m = modules[i];
-            var href= host + "/api/v1/courses/" + courseId + "/modules/" + m.id + "/items?per_page=100";
+            var href= "/api/v1/courses/" + courseId + "/modules/" + m.id + "/items?per_page=100";
             $.getJSON(
                 href,
                 (function(j) {
